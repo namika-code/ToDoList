@@ -1,0 +1,6 @@
+@startuml
+[コンポーネント１]
+[コンポーネント2] as Comp2
+component [コンポーネント3]
+component コンポーネント4
+@enduml

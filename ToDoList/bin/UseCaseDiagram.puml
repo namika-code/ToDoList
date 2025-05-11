@@ -1,0 +1,5 @@
+@startuml
+User -> (登録)
+User -> (削除)
+User -> (更新)
+@enduml

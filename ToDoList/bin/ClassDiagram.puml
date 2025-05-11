@@ -1,0 +1,17 @@
+@startuml
+
+' 継承（汎化）
+Class01 <|-- Class02 : 汎化
+
+' コンポジション（強い関連）
+Class03 *-- Class04 : コンポジション
+
+' 集約（弱い関連）
+Class05 o-- Class06 : 集約
+
+' 依存関係（点線矢印）
+Class07 .. Class08 : 関係
+
+' 通常の関連 
+Class09 -- Class10 : 依存
+@enduml

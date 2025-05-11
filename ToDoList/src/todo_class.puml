@@ -1,0 +1,60 @@
+@startuml
+class Main {
+    + main(String[] args): void
+}
+
+class FileManager {
+    + loadTasksFromFile(String, DefaultListModel<String>): void
+    + saveToFile(String, DefaultListModel<String>): void
+    + saveSelectedToFile(String, String): void
+}
+
+class ToDoListManager {
+    - listModel: DefaultListModel<String>
+    - undoStack: Stack<Pair<String, Integer>>
+    - completedStack: Stack<Pair<String, Integer>>
+    - fileManager: FileManager
+    + getListModel(): DefaultListModel<String>
+    + addTask(String): void
+    + removeTask(int): void
+    + restoreTask(): void
+    + completeTask(int): void
+    + saveTask(): void
+}
+
+class Pair<T, U> {
+    - key: T
+    - value: U
+    + getKey(): T
+    + getValue(): U
+}
+
+class ToDoListUI {
+    - manager: ToDoListManager
+    - frame: JFrame
+    - taskInput: JTextField
+    - taskList: JList<String>
+    + InitializeUI(): void
+    + show(): void
+    + addTask(): void
+    + removeTask(): void
+    + restoreTask(): void
+    + completeTask(): void
+    + saveTask(): void
+    + upTask(): void
+    + downTask(): void
+}
+
+class LockManager {
+    - LOCK_FILE: String
+    - instance: LockManager
+    + getInstance(): LockManager
+    + acquireLock(): boolean
+    + releaseLock(): void
+}
+
+Main --> ToDoListManager
+Main --> ToDoListUI
+ToDoListManager --> FileManager
+ToDoListManager --> Pair
+ToDoListUI --> ToDoListManager

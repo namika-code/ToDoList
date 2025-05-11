@@ -1,0 +1,4 @@
+@startuml
+Taro -> Kaori : Get married!
+Kaori --> Taro : No
+@enduml
