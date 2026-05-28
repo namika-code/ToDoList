@@ -103,6 +103,7 @@ This project is licensed under the MIT License.
 
 
 ## ファイル構成
+```
 ├── ToDo/
 │   ├── ToDoListManager.java      // タスクの管理ロジック
 │   ├── ToDoListUI.java           // UIロジック（Swingベース）
@@ -116,7 +117,7 @@ This project is licensed under the MIT License.
 │   └── CreatedList/
 │       ├── task.txt              // 保存された未完了タスク一覧
 │       └── completed.txt         // 完了済みタスク一覧
-
+```
 ---
 
 ## 主な機能
